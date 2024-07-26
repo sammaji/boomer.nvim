@@ -90,7 +90,7 @@ use {
   end
 }
 
-use {"akinsho/toggleterm.nvim", tag = '*'}
+use {"akinsho/toggleterm.nvim", tag = '*', config=true}
 
 use({
     "kdheepak/lazygit.nvim",
@@ -103,5 +103,10 @@ use({
         require("telescope").load_extension("lazygit")
     end,
 })
+
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
 
 end)
