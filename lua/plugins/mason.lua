@@ -1,39 +1,29 @@
 return {
-	"williamboman/mason.nvim",
-	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	},
-	config = function()
-		local mason = require("mason")
-		local mason_lspconfig = require("mason-lspconfig")
-		local mason_tool_installer = require("mason-tool-installer")
+    "williamboman/mason.nvim",
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
+    config = function()
+        local mason = require("mason")
+        local mason_lspconfig = require("mason-lspconfig")
+        local mason_tool_installer = require("mason-tool-installer")
 
-		mason.setup({})
-		mason_lspconfig.setup({
-			ensure_installed = {
-				"tsserver",
-				"html",
-				"cssls",
-				"tailwindcss",
-				"svelte",
-				"lua_ls",
-				"graphql",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-			},
-		})
+        mason.setup({})
+        mason_lspconfig.setup({
+            ensure_installed = {
+                "rust-analyzer",
+                "typescript-language-server",
+                "tailwind-language-server",
+                "prisma-language-server",
+                "eslint-lsp"
+            },
+        })
 
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint",
-				"eslint_d",
-			},
-		})
-	end,
+        mason_tool_installer.setup({
+            ensure_installed = {
+                "prettierd"
+            },
+        })
+    end,
 }
