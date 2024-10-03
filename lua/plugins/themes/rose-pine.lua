@@ -1,8 +1,8 @@
-local transparency = true;
+local settings = require("config.settings")
+local transparency = settings.theme.transparency
 
 return {
     "rose-pine/neovim",
-    init = function() vim.cmd("colorscheme rose-pine-main") end,
     name = "rose-pine",
     opts = {
         variant = "auto",      -- auto, main, moon, or dawn
